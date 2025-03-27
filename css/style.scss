@@ -1,0 +1,1156 @@
+// 変数
+$primary-color: #ff7e5f;
+$secondary-color: #feb47b;
+$text-color: #333;
+$light-text: #777;
+$white: #fff;
+$light-bg: #f8f9fa;
+$dark-bg: #343a40;
+$border-radius: 8px;
+$box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+$transition: all 0.3s ease;
+
+// グリッドシステム変数
+$grid-columns: 12;
+$grid-gutter: 30px;
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+);
+
+// リセットとベーススタイル
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%; // 1rem = 10px
+  scroll-behavior: smooth;
+  overflow-x: hidden; // 水平スクロールバーを防止
+}
+
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 1.6rem;
+  line-height: 1.6;
+  color: $text-color;
+  background-color: $white;
+  overflow-x: hidden; // 水平スクロールバーを防止
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: $text-color;
+  transition: $transition;
+
+  &:hover {
+    color: $primary-color;
+  }
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+// コンテナ
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem; // 左右のパディングを調整
+
+  @media (max-width: 576px) {
+    padding: 0 1rem; // SPでのパディングをさらに小さく
+  }
+}
+
+.container-fluid {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+
+  @media (max-width: 576px) {
+    padding: 0 1rem;
+  }
+}
+
+// セクションスタイル
+section {
+  padding: 10rem 0;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 6rem;
+}
+
+.section-title {
+  font-size: 3.6rem;
+  font-weight: 700;
+  color: $text-color;
+  margin-bottom: 1.5rem;
+  position: relative;
+  display: inline-block;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 3px;
+    background: linear-gradient(to right, $primary-color, $secondary-color);
+    border-radius: 3px;
+  }
+}
+
+.section-subtitle {
+  font-size: 1.8rem;
+  color: $light-text;
+}
+
+// ヘッダー
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  background-color: rgba($white, 0.95);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem 0;
+  transition: $transition;
+
+  &.scrolled {
+    padding: 1rem 0;
+    background-color: rgba($white, 0.98);
+  }
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    background: linear-gradient(to right, $primary-color, $secondary-color);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 1px;
+  }
+}
+
+.nav-list {
+  display: flex;
+  gap: 2.5rem;
+}
+
+.nav-link {
+  font-size: 1.6rem;
+  font-weight: 500;
+  padding: 0.5rem 0;
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(to right, $primary-color, $secondary-color);
+    transition: $transition;
+  }
+
+  &:hover::after {
+    width: 100%;
+  }
+}
+
+.mobile-menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 25px;
+  height: 20px;
+
+  span {
+    display: block;
+    height: 2px;
+    width: 100%;
+    background-color: $text-color;
+    transition: $transition;
+  }
+}
+
+// ヒーローセクション
+.hero {
+  height: 100vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://source.unsplash.com/random/1920x1080/?creative') no-repeat center center/cover;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: $white;
+  margin-top: 0;
+  padding: 0;
+}
+
+.hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero-title {
+  font-size: 5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 2rem;
+}
+
+.hero-text {
+  font-size: 2rem;
+  margin-bottom: 4rem;
+  opacity: 0.9;
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+// ボタン
+.btn {
+  display: inline-block;
+  padding: 1.2rem 3rem;
+  border-radius: 50px;
+  font-weight: 500;
+  text-align: center;
+  cursor: pointer;
+  transition: $transition;
+  font-size: 1.6rem;
+}
+
+.btn-primary {
+  background: linear-gradient(to right, $primary-color, $secondary-color);
+  color: $white;
+  border: none;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    color: $white;
+  }
+}
+
+.btn-outline {
+  background: transparent;
+  color: $white;
+  border: 2px solid $white;
+
+  &:hover {
+    background-color: $white;
+    color: $text-color;
+    transform: translateY(-3px);
+  }
+}
+
+// 特徴セクション
+.features {
+  background-color: $light-bg;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 3rem;
+}
+
+.feature-card {
+  background-color: $white;
+  padding: 3rem;
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
+  text-align: center;
+  transition: $transition;
+
+  &:hover {
+    transform: translateY(-10px);
+  }
+}
+
+.feature-icon {
+  font-size: 3.6rem;
+  margin-bottom: 2rem;
+
+  i {
+    background: linear-gradient(to right, $primary-color, $secondary-color);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+.feature-title {
+  font-size: 2.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.feature-text {
+  color: $light-text;
+}
+
+// サービスセクション
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 4rem;
+}
+
+.service-item {
+  border-radius: $border-radius;
+  overflow: hidden;
+  box-shadow: $box-shadow;
+  transition: $transition;
+
+  &:hover {
+    transform: translateY(-10px);
+
+    .service-image {
+      transform: scale(1.05);
+    }
+  }
+}
+
+.service-image {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  transition: $transition;
+}
+
+.service-content {
+  padding: 2.5rem;
+  background-color: $white;
+}
+
+.service-title {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+}
+
+.service-text {
+  color: $light-text;
+  margin-bottom: 2rem;
+}
+
+.service-link {
+  display: inline-block;
+  font-weight: 500;
+  color: $primary-color;
+
+  i {
+    margin-left: 5px;
+    transition: $transition;
+  }
+
+  &:hover i {
+    transform: translateX(5px);
+  }
+}
+
+// お客様の声セクション
+.testimonials {
+  background-color: $light-bg;
+}
+
+.testimonials-slider {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 3rem;
+}
+
+.testimonial-item {
+  background-color: $white;
+  padding: 3rem;
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
+}
+
+.testimonial-content {
+  margin-bottom: 2rem;
+}
+
+.testimonial-text {
+  font-style: italic;
+  color: $text-color;
+  line-height: 1.8;
+  position: relative;
+
+  &::before {
+    content: '\f10d';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    font-size: 2rem;
+    color: rgba($primary-color, 0.2);
+    position: absolute;
+    top: -10px;
+    left: -20px;
+  }
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+}
+
+.testimonial-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-right: 1.5rem;
+  object-fit: cover;
+}
+
+.testimonial-name {
+  font-size: 1.8rem;
+  margin-bottom: 0.2rem;
+}
+
+.testimonial-position {
+  color: $light-text;
+  font-size: 1.4rem;
+}
+
+// CTAセクション
+.cta {
+  background: linear-gradient(to right, $primary-color, $secondary-color);
+  color: $white;
+  text-align: center;
+  padding: 8rem 0;
+}
+
+.cta-title {
+  font-size: 3.6rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.cta-text {
+  font-size: 1.8rem;
+  margin-bottom: 3rem;
+  opacity: 0.9;
+}
+
+.cta .btn-primary {
+  background-color: $white;
+  color: $primary-color;
+
+  &:hover {
+    background-color: rgba($white, 0.9);
+    color: $primary-color;
+  }
+}
+
+// フッター
+.footer {
+  background-color: $dark-bg;
+  color: $white;
+  padding-top: 8rem;
+}
+
+.footer-top {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 5rem;
+  margin-bottom: 5rem;
+}
+
+.footer-info {
+  max-width: 400px;
+}
+
+.footer-logo {
+  font-size: 2.4rem;
+  font-weight: 700;
+  background: linear-gradient(to right, $primary-color, $secondary-color);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 2rem;
+}
+
+.footer-description {
+  margin-bottom: 2.5rem;
+  opacity: 0.8;
+}
+
+.social-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: rgba($white, 0.1);
+  border-radius: 50%;
+  color: $white;
+  transition: $transition;
+
+  &:hover {
+    background: linear-gradient(to right, $primary-color, $secondary-color);
+    color: $white;
+    transform: translateY(-3px);
+  }
+}
+
+.footer-links {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+}
+
+.footer-links-title {
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  position: relative;
+  display: inline-block;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 30px;
+    height: 2px;
+    background: linear-gradient(to right, $primary-color, $secondary-color);
+  }
+}
+
+.footer-menu li {
+  margin-bottom: 1rem;
+}
+
+.footer-menu a {
+  color: rgba($white, 0.8);
+
+  &:hover {
+    color: $primary-color;
+    padding-left: 5px;
+  }
+}
+
+.footer-contact li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  color: rgba($white, 0.8);
+
+  i {
+    margin-right: 1rem;
+    color: $primary-color;
+  }
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba($white, 0.1);
+  padding: 2.5rem 0;
+  text-align: center;
+}
+
+.copyright {
+  opacity: 0.7;
+  font-size: 1.4rem;
+}
+
+// メディアクエリ
+@media screen and (max-width: 991px) {
+  html {
+    font-size: 60%;
+  }
+
+  .footer-top {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+
+  .footer-info {
+    max-width: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .nav {
+    position: fixed;
+    top: 70px;
+    left: -100%;
+    width: 100%;
+    height: calc(100vh - 70px);
+    background-color: $white;
+    transition: $transition;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .nav.active {
+    left: 0;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .nav-item {
+    margin: 1.5rem 0;
+  }
+
+  .mobile-menu-toggle {
+    display: flex;
+  }
+
+  .hero-title {
+    font-size: 4rem;
+  }
+
+  .features-grid,
+  .services-grid,
+  .testimonials-slider {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-links {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .btn {
+    width: 100%;
+    max-width: 250px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  html {
+    font-size: 55%;
+  }
+
+  .hero-title {
+    font-size: 3.5rem;
+  }
+
+  .section-title {
+    font-size: 3rem;
+  }
+}
+
+// グリッドシステム
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -($grid-gutter / 2);
+  margin-left: -($grid-gutter / 2);
+
+  // SPでのはみ出しを防止
+  @media (max-width: 576px) {
+    margin-right: -1rem;
+    margin-left: -1rem;
+  }
+}
+
+.no-gutters {
+  margin-right: 0;
+  margin-left: 0;
+
+  >.col,
+  >[class*="col-"] {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
+.col {
+  flex-basis: 0;
+  flex-grow: 1;
+  max-width: 100%;
+  padding-right: $grid-gutter / 2;
+  padding-left: $grid-gutter / 2;
+
+  @media (max-width: 576px) {
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+}
+
+// カラムの生成
+@each $breakpoint-name, $breakpoint-value in $grid-breakpoints {
+  @media (min-width: $breakpoint-value) {
+
+    // col-{breakpoint}クラス
+    .col-#{$breakpoint-name} {
+      flex-basis: 0;
+      flex-grow: 1;
+      max-width: 100%;
+    }
+
+    // col-{breakpoint}-{n}クラス
+    @for $i from 1 through $grid-columns {
+      .col-#{$breakpoint-name}-#{$i} {
+        flex: 0 0 percentage($i / $grid-columns);
+        max-width: percentage($i / $grid-columns);
+        padding-right: $grid-gutter / 2;
+        padding-left: $grid-gutter / 2;
+
+        @if $breakpoint-name ==xs {
+          @media (max-width: 576px) {
+            padding-right: 1rem;
+            padding-left: 1rem;
+          }
+        }
+      }
+    }
+
+    // offset-{breakpoint}-{n}クラス
+    @for $i from 0 through ($grid-columns - 1) {
+      .offset-#{$breakpoint-name}-#{$i} {
+        margin-left: percentage($i / $grid-columns);
+      }
+    }
+  }
+}
+
+// ユーティリティクラス
+.justify-content-start {
+  justify-content: flex-start !important;
+}
+
+.justify-content-end {
+  justify-content: flex-end !important;
+}
+
+.justify-content-center {
+  justify-content: center !important;
+}
+
+.justify-content-between {
+  justify-content: space-between !important;
+}
+
+.justify-content-around {
+  justify-content: space-around !important;
+}
+
+.align-items-start {
+  align-items: flex-start !important;
+}
+
+.align-items-end {
+  align-items: flex-end !important;
+}
+
+.align-items-center {
+  align-items: center !important;
+}
+
+.align-items-baseline {
+  align-items: baseline !important;
+}
+
+.align-items-stretch {
+  align-items: stretch !important;
+}
+
+// グリッドデモ用スタイル
+.grid-demo {
+  background-color: $light-bg;
+  padding: 10rem 0;
+}
+
+.grid-example {
+  margin-bottom: 5rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.grid-example-title {
+  font-size: 2.4rem;
+  margin-bottom: 2rem;
+  color: $text-color;
+}
+
+.grid-demo-item {
+  background-color: rgba($primary-color, 0.1);
+  border: 2px dashed rgba($primary-color, 0.3);
+  border-radius: $border-radius;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  height: 100%;
+  transition: $transition;
+
+  &:hover {
+    background-color: rgba($primary-color, 0.15);
+    border-color: rgba($primary-color, 0.5);
+  }
+
+  h4 {
+    font-size: 1.8rem;
+    color: $primary-color;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    font-size: 1.4rem;
+    color: $light-text;
+    margin-bottom: 0;
+  }
+
+  .row {
+    margin-top: 2rem;
+  }
+
+  .grid-demo-item {
+    background-color: rgba($secondary-color, 0.1);
+    border-color: rgba($secondary-color, 0.3);
+
+    &:hover {
+      background-color: rgba($secondary-color, 0.15);
+      border-color: rgba($secondary-color, 0.5);
+    }
+
+    h4 {
+      color: $secondary-color;
+    }
+  }
+}
+
+// フォーム要素
+.form-group {
+  margin-bottom: 2rem;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: $text-color;
+}
+
+.form-control {
+  display: block;
+  width: 100%;
+  padding: 1rem 1.5rem;
+  font-size: 1.6rem;
+  line-height: 1.5;
+  color: $text-color;
+  background-color: $white;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: $border-radius;
+  transition: $transition;
+
+  &:focus {
+    border-color: $primary-color;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba($primary-color, 0.25);
+  }
+
+  &::placeholder {
+    color: $light-text;
+    opacity: 0.7;
+  }
+}
+
+textarea.form-control {
+  height: auto;
+  min-height: 100px;
+  resize: vertical;
+}
+
+.form-check {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.form-check-input {
+  margin-right: 1rem;
+}
+
+.form-check-label {
+  margin-bottom: 0;
+}
+
+// リスト
+.list {
+  margin-bottom: 2rem;
+
+  &-item {
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+}
+
+.list-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+  border-radius: $border-radius;
+  overflow: hidden;
+
+  &-item {
+    padding: 1.2rem 1.5rem;
+    background-color: $white;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-bottom: none;
+
+    &:last-child {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+    }
+
+    &:first-child {
+      border-top-left-radius: $border-radius;
+      border-top-right-radius: $border-radius;
+    }
+
+    &:last-child {
+      border-bottom-left-radius: $border-radius;
+      border-bottom-right-radius: $border-radius;
+    }
+
+    &.active {
+      background-color: $primary-color;
+      color: $white;
+    }
+  }
+}
+
+// カード
+.card {
+  background-color: $white;
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
+  margin-bottom: 2rem;
+  overflow: hidden;
+
+  &-header {
+    padding: 1.5rem 2rem;
+    background-color: rgba($light-bg, 0.5);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  &-body {
+    padding: 2rem;
+  }
+
+  &-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+
+  &-text {
+    color: $light-text;
+    margin-bottom: 1.5rem;
+  }
+
+  &-footer {
+    padding: 1.5rem 2rem;
+    background-color: rgba($light-bg, 0.5);
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+  }
+}
+
+// アラート
+.alert {
+  padding: 1.2rem 2rem;
+  margin-bottom: 2rem;
+  border-radius: $border-radius;
+  font-weight: 500;
+
+  &-primary {
+    background-color: rgba($primary-color, 0.1);
+    color: darken($primary-color, 20%);
+    border-left: 4px solid $primary-color;
+  }
+
+  &-secondary {
+    background-color: rgba($secondary-color, 0.1);
+    color: darken($secondary-color, 20%);
+    border-left: 4px solid $secondary-color;
+  }
+
+  &-success {
+    background-color: rgba(#28a745, 0.1);
+    color: darken(#28a745, 20%);
+    border-left: 4px solid #28a745;
+  }
+
+  &-danger {
+    background-color: rgba(#dc3545, 0.1);
+    color: darken(#dc3545, 20%);
+    border-left: 4px solid #dc3545;
+  }
+
+  &-warning {
+    background-color: rgba(#ffc107, 0.1);
+    color: darken(#ffc107, 30%);
+    border-left: 4px solid #ffc107;
+  }
+
+  &-info {
+    background-color: rgba(#17a2b8, 0.1);
+    color: darken(#17a2b8, 20%);
+    border-left: 4px solid #17a2b8;
+  }
+}
+
+// ボタングループ
+.btn-group {
+  display: flex;
+
+  .btn {
+    border-radius: 0;
+
+    &:first-child {
+      border-top-left-radius: 50px;
+      border-bottom-left-radius: 50px;
+    }
+
+    &:last-child {
+      border-top-right-radius: 50px;
+      border-bottom-right-radius: 50px;
+    }
+  }
+}
+
+// 追加のボタンスタイル
+.btn-secondary {
+  background: linear-gradient(to right, $secondary-color, lighten($secondary-color, 10%));
+  color: $white;
+  border: none;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    color: $white;
+  }
+}
+
+.btn-success {
+  background: linear-gradient(to right, #28a745, lighten(#28a745, 10%));
+  color: $white;
+  border: none;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    color: $white;
+  }
+}
+
+.btn-danger {
+  background: linear-gradient(to right, #dc3545, lighten(#dc3545, 10%));
+  color: $white;
+  border: none;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    color: $white;
+  }
+}
+
+.btn-sm {
+  padding: 0.8rem 2rem;
+  font-size: 1.4rem;
+}
+
+.btn-lg {
+  padding: 1.5rem 3.5rem;
+  font-size: 1.8rem;
+}
+
+// バッジ
+.badge {
+  display: inline-block;
+  padding: 0.4rem 0.8rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+  border-radius: 20px;
+  color: $white;
+
+  &-primary {
+    background-color: $primary-color;
+  }
+
+  &-secondary {
+    background-color: $secondary-color;
+  }
+
+  &-success {
+    background-color: #28a745;
+  }
+
+  &-danger {
+    background-color: #dc3545;
+  }
+
+  &-warning {
+    background-color: #ffc107;
+    color: $text-color;
+  }
+
+  &-info {
+    background-color: #17a2b8;
+  }
+}
+
+// プログレスバー
+.progress {
+  height: 1rem;
+  background-color: $light-bg;
+  border-radius: 50px;
+  margin-bottom: 2rem;
+  overflow: hidden;
+
+  &-bar {
+    height: 100%;
+    background: linear-gradient(to right, $primary-color, $secondary-color);
+    transition: width 0.5s ease;
+  }
+}
