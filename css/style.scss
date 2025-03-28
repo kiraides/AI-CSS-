@@ -1174,10 +1174,26 @@ section {
         }
 
         // 入れ子のカラムの幅を親要素に対して相対的に計算
-        &.col-#{$breakpoint-name}-8 {
-          >.row>.col-#{$breakpoint-name}-4 {
-            flex: 0 0 50%;
-            max-width: 50%;
+        @if $breakpoint-name ==md {
+          &.col-md-8 {
+            >.row>.col-md-4 {
+              flex: 0 0 50%;
+              max-width: 50%;
+            }
+          }
+
+          &.col-md-6 {
+            >.row>.col-md-3 {
+              flex: 0 0 50%;
+              max-width: 50%;
+            }
+          }
+
+          &.col-md-4 {
+            >.row>.col-md-2 {
+              flex: 0 0 50%;
+              max-width: 50%;
+            }
           }
         }
 
