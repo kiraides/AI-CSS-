@@ -1,0 +1,191 @@
+// レスポンシブユーティリティクラス
+
+// デバイスごとの表示・非表示
+.hide-sp {
+  @include sp {
+    display: none !important;
+  }
+}
+
+.hide-pc {
+  @include pc {
+    display: none !important;
+  }
+}
+
+.show-sp {
+  @include pc {
+    display: none !important;
+  }
+}
+
+.show-pc {
+  @include sp {
+    display: none !important;
+  }
+}
+
+// デバイスごとのテキストアライメント
+.text-left-sp {
+  @include sp {
+    text-align: left !important;
+  }
+}
+
+.text-center-sp {
+  @include sp {
+    text-align: center !important;
+  }
+}
+
+.text-right-sp {
+  @include sp {
+    text-align: right !important;
+  }
+}
+
+.text-left-pc {
+  @include pc {
+    text-align: left !important;
+  }
+}
+
+.text-center-pc {
+  @include pc {
+    text-align: center !important;
+  }
+}
+
+.text-right-pc {
+  @include pc {
+    text-align: right !important;
+  }
+}
+
+// デバイスごとのフレックス調整
+.flex-column-sp {
+  @include sp {
+    flex-direction: column !important;
+  }
+}
+
+.flex-row-sp {
+  @include sp {
+    flex-direction: row !important;
+  }
+}
+
+.flex-column-pc {
+  @include pc {
+    flex-direction: column !important;
+  }
+}
+
+.flex-row-pc {
+  @include pc {
+    flex-direction: row !important;
+  }
+}
+
+// デバイスごとの余白調整
+@for $i from 0 through 10 {
+
+  // マージン
+  .mt-sp-#{$i} {
+    @include sp {
+      margin-top: var(--spacing-#{$i}) !important;
+    }
+  }
+
+  .mb-sp-#{$i} {
+    @include sp {
+      margin-bottom: var(--spacing-#{$i}) !important;
+    }
+  }
+
+  .ml-sp-#{$i} {
+    @include sp {
+      margin-left: var(--spacing-#{$i}) !important;
+    }
+  }
+
+  .mr-sp-#{$i} {
+    @include sp {
+      margin-right: var(--spacing-#{$i}) !important;
+    }
+  }
+
+  // パディング
+  .pt-sp-#{$i} {
+    @include sp {
+      padding-top: var(--spacing-#{$i}) !important;
+    }
+  }
+
+  .pb-sp-#{$i} {
+    @include sp {
+      padding-bottom: var(--spacing-#{$i}) !important;
+    }
+  }
+
+  .pl-sp-#{$i} {
+    @include sp {
+      padding-left: var(--spacing-#{$i}) !important;
+    }
+  }
+
+  .pr-sp-#{$i} {
+    @include sp {
+      padding-right: var(--spacing-#{$i}) !important;
+    }
+  }
+
+  // PCの余白
+  .mt-pc-#{$i} {
+    @include pc {
+      margin-top: var(--spacing-#{$i}) !important;
+    }
+  }
+
+  .mb-pc-#{$i} {
+    @include pc {
+      margin-bottom: var(--spacing-#{$i}) !important;
+    }
+  }
+
+  .ml-pc-#{$i} {
+    @include pc {
+      margin-left: var(--spacing-#{$i}) !important;
+    }
+  }
+
+  .mr-pc-#{$i} {
+    @include pc {
+      margin-right: var(--spacing-#{$i}) !important;
+    }
+  }
+
+  .pt-pc-#{$i} {
+    @include pc {
+      padding-top: var(--spacing-#{$i}) !important;
+    }
+  }
+
+  .pb-pc-#{$i} {
+    @include pc {
+      padding-bottom: var(--spacing-#{$i}) !important;
+    }
+  }
+
+  .pl-pc-#{$i} {
+    @include pc {
+      padding-left: var(--spacing-#{$i}) !important;
+    }
+  }
+
+  .pr-pc-#{$i} {
+    @include pc {
+      padding-right: var(--spacing-#{$i}) !important;
+    }
+  }
+}

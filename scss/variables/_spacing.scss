@@ -1,0 +1,43 @@
+// スペーシング変数
+:root {
+  --spacing-0: 0;
+  --spacing-1: 0.25rem; // 4px
+  --spacing-2: 0.5rem; // 8px
+  --spacing-3: 0.75rem; // 12px
+  --spacing-4: 1rem; // 16px
+  --spacing-5: 1.5rem; // 24px
+  --spacing-6: 2rem; // 32px
+  --spacing-7: 2.5rem; // 40px
+  --spacing-8: 3rem; // 48px
+  --spacing-9: 4rem; // 64px
+  --spacing-10: 5rem; // 80px
+
+  // コンテナの最大幅
+  --container-max-width: 1200px;
+  --container-padding: var(--spacing-4);
+
+  // ボーダー
+  --border-width: 1px;
+  --border-width-md: 2px;
+  --border-width-lg: 4px;
+  --border-radius-sm: 0.25rem; // 4px
+  --border-radius: 0.375rem; // 6px
+  --border-radius-md: 0.5rem; // 8px
+  --border-radius-lg: 0.75rem; // 12px
+  --border-radius-xl: 1rem; // 16px
+  --border-radius-full: 9999px;
+
+  // z-index
+  --z-negative: -1;
+  --z-0: 0;
+  --z-10: 10;
+  --z-20: 20;
+  --z-30: 30;
+  --z-40: 40;
+  --z-50: 50;
+  --z-100: 100;
+  --z-auto: auto;
+
+  // トランジション
+  --transition-default: all 0.3s ease;
+}

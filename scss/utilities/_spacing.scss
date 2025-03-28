@@ -1,0 +1,139 @@
+// スペーシングユーティリティクラス
+
+// マージン
+@for $i from 0 through 10 {
+
+  // 全方向
+  .m-#{$i} {
+    margin: var(--spacing-#{$i}) !important;
+  }
+
+  // 上下左右
+  .mx-#{$i} {
+    margin-left: var(--spacing-#{$i}) !important;
+    margin-right: var(--spacing-#{$i}) !important;
+  }
+
+  .my-#{$i} {
+    margin-top: var(--spacing-#{$i}) !important;
+    margin-bottom: var(--spacing-#{$i}) !important;
+  }
+
+  // 個別方向
+  .mt-#{$i} {
+    margin-top: var(--spacing-#{$i}) !important;
+  }
+
+  .mr-#{$i} {
+    margin-right: var(--spacing-#{$i}) !important;
+  }
+
+  .mb-#{$i} {
+    margin-bottom: var(--spacing-#{$i}) !important;
+  }
+
+  .ml-#{$i} {
+    margin-left: var(--spacing-#{$i}) !important;
+  }
+}
+
+// 自動マージン
+.m-auto {
+  margin: auto !important;
+}
+
+.mx-auto {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.my-auto {
+  margin-top: auto !important;
+  margin-bottom: auto !important;
+}
+
+.mt-auto {
+  margin-top: auto !important;
+}
+
+.mr-auto {
+  margin-right: auto !important;
+}
+
+.mb-auto {
+  margin-bottom: auto !important;
+}
+
+.ml-auto {
+  margin-left: auto !important;
+}
+
+// パディング
+@for $i from 0 through 10 {
+
+  // 全方向
+  .p-#{$i} {
+    padding: var(--spacing-#{$i}) !important;
+  }
+
+  // 上下左右
+  .px-#{$i} {
+    padding-left: var(--spacing-#{$i}) !important;
+    padding-right: var(--spacing-#{$i}) !important;
+  }
+
+  .py-#{$i} {
+    padding-top: var(--spacing-#{$i}) !important;
+    padding-bottom: var(--spacing-#{$i}) !important;
+  }
+
+  // 個別方向
+  .pt-#{$i} {
+    padding-top: var(--spacing-#{$i}) !important;
+  }
+
+  .pr-#{$i} {
+    padding-right: var(--spacing-#{$i}) !important;
+  }
+
+  .pb-#{$i} {
+    padding-bottom: var(--spacing-#{$i}) !important;
+  }
+
+  .pl-#{$i} {
+    padding-left: var(--spacing-#{$i}) !important;
+  }
+}
+
+// ネガティブマージン
+@for $i from 1 through 10 {
+  .m-n#{$i} {
+    margin: calc(var(--spacing-#{$i}) * -1) !important;
+  }
+
+  .mx-n#{$i} {
+    margin-left: calc(var(--spacing-#{$i}) * -1) !important;
+    margin-right: calc(var(--spacing-#{$i}) * -1) !important;
+  }
+
+  .my-n#{$i} {
+    margin-top: calc(var(--spacing-#{$i}) * -1) !important;
+    margin-bottom: calc(var(--spacing-#{$i}) * -1) !important;
+  }
+
+  .mt-n#{$i} {
+    margin-top: calc(var(--spacing-#{$i}) * -1) !important;
+  }
+
+  .mr-n#{$i} {
+    margin-right: calc(var(--spacing-#{$i}) * -1) !important;
+  }
+
+  .mb-n#{$i} {
+    margin-bottom: calc(var(--spacing-#{$i}) * -1) !important;
+  }
+
+  .ml-n#{$i} {
+    margin-left: calc(var(--spacing-#{$i}) * -1) !important;
+  }
+}

@@ -1,0 +1,198 @@
+// ドロワーコンポーネント
+.drawer-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: var(--z-40);
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--color-black);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+
+  &.show {
+    opacity: 0.5;
+    visibility: visible;
+  }
+}
+
+.drawer {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  z-index: var(--z-50);
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+  visibility: hidden;
+  background-color: var(--color-white);
+  background-clip: padding-box;
+  outline: 0;
+  transition: transform 0.3s ease-in-out;
+
+  // ドロワーの位置
+  &.drawer-left {
+    left: 0;
+    right: auto;
+    transform: translateX(-100%);
+    border-right: var(--border-width) solid var(--border-color);
+  }
+
+  &.drawer-right {
+    right: 0;
+    left: auto;
+    transform: translateX(100%);
+    border-left: var(--border-width) solid var(--border-color);
+  }
+
+  &.show {
+    transform: none;
+    visibility: visible;
+  }
+}
+
+.drawer-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  height: 100%;
+  overflow-y: auto;
+
+  @include sp {
+    width: 280px;
+  }
+}
+
+.drawer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--spacing-3) var(--spacing-4);
+  border-bottom: var(--border-width) solid var(--border-color);
+
+  .drawer-title {
+    margin-bottom: 0;
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-tight);
+  }
+
+  .close {
+    padding: var(--spacing-1);
+    margin: calc(var(--spacing-3) * -1) calc(var(--spacing-3) * -1) calc(var(--spacing-3) * -1) auto;
+    background-color: transparent;
+    border: 0;
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-normal);
+    line-height: 1;
+    color: var(--color-gray-600);
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+      color: var(--color-black);
+      text-decoration: none;
+      opacity: 0.75;
+    }
+  }
+}
+
+.drawer-body {
+  flex: 1 1 auto;
+  overflow-y: auto;
+  padding: var(--spacing-4);
+}
+
+.drawer-footer {
+  display: flex;
+  flex-wrap: wrap;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: flex-end;
+  padding: var(--spacing-3) var(--spacing-4);
+  border-top: var(--border-width) solid var(--border-color);
+
+  >* {
+    margin: var(--spacing-1);
+  }
+}
+
+// ナビゲーションメニュー（ドロワー用）
+.drawer-nav {
+  display: flex;
+  flex-direction: column;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+
+  .nav-item {
+    width: 100%;
+
+    &:not(:last-child) {
+      border-bottom: var(--border-width) solid var(--border-color);
+    }
+  }
+
+  .nav-link {
+    display: block;
+    padding: var(--spacing-3) var(--spacing-4);
+    color: var(--color-gray-800);
+    text-decoration: none;
+    transition: var(--transition-default);
+
+    &:hover,
+    &:focus {
+      background-color: var(--color-gray-100);
+      color: var(--color-primary);
+    }
+
+    &.active {
+      color: var(--color-primary);
+      font-weight: var(--font-weight-medium);
+      background-color: rgba(52, 152, 219, 0.1);
+    }
+  }
+
+  // サブメニュー
+  .nav-submenu {
+    display: none;
+    padding-left: 0;
+    list-style: none;
+
+    &.show {
+      display: block;
+    }
+
+    .nav-item {
+      border-bottom: none;
+    }
+
+    .nav-link {
+      padding-left: var(--spacing-6);
+      font-size: var(--font-size-sm);
+    }
+  }
+
+  // ドロップダウントグルアイコン
+  .dropdown-toggle {
+    position: relative;
+
+    &::after {
+      content: "";
+      display: inline-block;
+      margin-left: auto;
+      width: 0.5em;
+      height: 0.5em;
+      border-right: 1px solid currentColor;
+      border-bottom: 1px solid currentColor;
+      transform: rotate(45deg);
+      transition: transform 0.2s ease-in-out;
+    }
+
+    &.show::after {
+      transform: rotate(-135deg);
+    }
+  }
+}

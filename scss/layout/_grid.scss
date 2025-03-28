@@ -1,0 +1,110 @@
+// 12カラムグリッドシステム
+.container {
+  width: 100%;
+  padding-right: var(--container-padding);
+  padding-left: var(--container-padding);
+  margin-right: auto;
+  margin-left: auto;
+  max-width: var(--container-max-width);
+}
+
+.container-fluid {
+  width: 100%;
+  padding-right: var(--container-padding);
+  padding-left: var(--container-padding);
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: calc(var(--spacing-4) * -1);
+  margin-left: calc(var(--spacing-4) * -1);
+
+  // no-guttersクラス
+  &.no-gutters {
+    margin-right: 0;
+    margin-left: 0;
+
+    >.col,
+    >[class*="col-"] {
+      padding-right: 0;
+      padding-left: 0;
+    }
+  }
+}
+
+// 基本のカラムクラス
+.col {
+  position: relative;
+  width: 100%;
+  padding-right: var(--spacing-4);
+  padding-left: var(--spacing-4);
+  flex-basis: 0;
+  flex-grow: 1;
+  max-width: 100%;
+}
+
+// 特定サイズのカラム
+@for $i from 1 through 12 {
+  .col-#{$i} {
+    position: relative;
+    width: 100%;
+    padding-right: var(--spacing-4);
+    padding-left: var(--spacing-4);
+    flex: 0 0 percentage($i / 12);
+    max-width: percentage($i / 12);
+  }
+}
+
+// PCサイズのカラム
+@include pc {
+  @for $i from 1 through 12 {
+    .col-pc-#{$i} {
+      position: relative;
+      width: 100%;
+      padding-right: var(--spacing-4);
+      padding-left: var(--spacing-4);
+      flex: 0 0 percentage($i / 12);
+      max-width: percentage($i / 12);
+    }
+  }
+}
+
+// SPサイズのカラム
+@include sp {
+  @for $i from 1 through 12 {
+    .col-sp-#{$i} {
+      position: relative;
+      width: 100%;
+      padding-right: var(--spacing-4);
+      padding-left: var(--spacing-4);
+      flex: 0 0 percentage($i / 12);
+      max-width: percentage($i / 12);
+    }
+  }
+}
+
+// オフセット
+@for $i from 0 through 11 {
+  .offset-#{$i} {
+    margin-left: percentage($i / 12);
+  }
+}
+
+@include pc {
+  @for $i from 0 through 11 {
+    .offset-pc-#{$i} {
+      margin-left: percentage($i / 12);
+    }
+  }
+}
+
+@include sp {
+  @for $i from 0 through 11 {
+    .offset-sp-#{$i} {
+      margin-left: percentage($i / 12);
+    }
+  }
+}

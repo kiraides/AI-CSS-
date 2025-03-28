@@ -1,0 +1,185 @@
+// カラーユーティリティクラス
+
+// テキストカラー
+.text-primary {
+  color: var(--color-primary) !important;
+}
+
+.text-primary-light {
+  color: var(--color-primary-light) !important;
+}
+
+.text-primary-dark {
+  color: var(--color-primary-dark) !important;
+}
+
+.text-secondary {
+  color: var(--color-secondary) !important;
+}
+
+.text-secondary-light {
+  color: var(--color-secondary-light) !important;
+}
+
+.text-secondary-dark {
+  color: var(--color-secondary-dark) !important;
+}
+
+.text-accent {
+  color: var(--color-accent) !important;
+}
+
+.text-accent-light {
+  color: var(--color-accent-light) !important;
+}
+
+.text-accent-dark {
+  color: var(--color-accent-dark) !important;
+}
+
+.text-success {
+  color: var(--color-success) !important;
+}
+
+.text-info {
+  color: var(--color-info) !important;
+}
+
+.text-warning {
+  color: var(--color-warning) !important;
+}
+
+.text-danger {
+  color: var(--color-danger) !important;
+}
+
+.text-white {
+  color: var(--color-white) !important;
+}
+
+.text-black {
+  color: var(--color-black) !important;
+}
+
+// グレースケールのテキストカラー
+@for $i from 1 through 9 {
+  .text-gray-#{$i}00 {
+    color: var(--color-gray-#{$i}00) !important;
+  }
+}
+
+// 背景色
+.bg-primary {
+  background-color: var(--color-primary) !important;
+}
+
+.bg-primary-light {
+  background-color: var(--color-primary-light) !important;
+}
+
+.bg-primary-dark {
+  background-color: var(--color-primary-dark) !important;
+}
+
+.bg-secondary {
+  background-color: var(--color-secondary) !important;
+}
+
+.bg-secondary-light {
+  background-color: var(--color-secondary-light) !important;
+}
+
+.bg-secondary-dark {
+  background-color: var(--color-secondary-dark) !important;
+}
+
+.bg-accent {
+  background-color: var(--color-accent) !important;
+}
+
+.bg-accent-light {
+  background-color: var(--color-accent-light) !important;
+}
+
+.bg-accent-dark {
+  background-color: var(--color-accent-dark) !important;
+}
+
+.bg-success {
+  background-color: var(--color-success) !important;
+}
+
+.bg-info {
+  background-color: var(--color-info) !important;
+}
+
+.bg-warning {
+  background-color: var(--color-warning) !important;
+}
+
+.bg-danger {
+  background-color: var(--color-danger) !important;
+}
+
+.bg-white {
+  background-color: var(--color-white) !important;
+}
+
+.bg-black {
+  background-color: var(--color-black) !important;
+}
+
+.bg-transparent {
+  background-color: transparent !important;
+}
+
+// グレースケールの背景色
+@for $i from 1 through 9 {
+  .bg-gray-#{$i}00 {
+    background-color: var(--color-gray-#{$i}00) !important;
+  }
+}
+
+// ボーダーカラー
+.border-primary {
+  border-color: var(--color-primary) !important;
+}
+
+.border-secondary {
+  border-color: var(--color-secondary) !important;
+}
+
+.border-accent {
+  border-color: var(--color-accent) !important;
+}
+
+.border-success {
+  border-color: var(--color-success) !important;
+}
+
+.border-info {
+  border-color: var(--color-info) !important;
+}
+
+.border-warning {
+  border-color: var(--color-warning) !important;
+}
+
+.border-danger {
+  border-color: var(--color-danger) !important;
+}
+
+.border-white {
+  border-color: var(--color-white) !important;
+}
+
+.border-black {
+  border-color: var(--color-black) !important;
+}
+
+// グレースケールのボーダーカラー
+@for $i from 1 through 9 {
+  .border-gray-#{$i}00 {
+    border-color: var(--color-gray-#{$i}00) !important;
+  }
+}

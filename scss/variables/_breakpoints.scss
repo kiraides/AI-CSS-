@@ -1,0 +1,19 @@
+// ブレークポイント変数
+$breakpoints: (
+  'sp': 768px,
+  // スマホ - 768px以下
+  'pc': 769px // PC - 769px以上
+);
+
+// メディアクエリミックスイン
+@mixin sp {
+  @media (max-width: map-get($breakpoints, 'sp')) {
+    @content;
+  }
+}
+
+@mixin pc {
+  @media (min-width: map-get($breakpoints, 'pc')) {
+    @content;
+  }
+}

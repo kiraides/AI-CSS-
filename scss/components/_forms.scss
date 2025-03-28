@@ -1,0 +1,276 @@
+// フォームコンポーネント
+.form-group {
+  margin-bottom: var(--spacing-4);
+}
+
+.form-label {
+  display: inline-block;
+  margin-bottom: var(--spacing-2);
+  font-weight: var(--font-weight-medium);
+}
+
+.form-text {
+  display: block;
+  margin-top: var(--spacing-1);
+  font-size: var(--font-size-sm);
+  color: var(--color-gray-600);
+}
+
+.form-control {
+  display: block;
+  width: 100%;
+  height: calc(var(--spacing-4) * 2.5);
+  padding: var(--spacing-2) var(--spacing-3);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-normal);
+  color: var(--color-gray-800);
+  background-color: var(--color-white);
+  background-clip: padding-box;
+  border: var(--border-width) solid var(--color-gray-400);
+  border-radius: var(--border-radius);
+  transition: var(--transition-default);
+
+  &:focus {
+    color: var(--color-gray-900);
+    background-color: var(--color-white);
+    border-color: var(--color-primary-light);
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(52, 152, 219, 0.25);
+  }
+
+  &:disabled,
+  &[readonly] {
+    background-color: var(--color-gray-200);
+    opacity: 1;
+  }
+
+  &::placeholder {
+    color: var(--color-gray-500);
+    opacity: 1;
+  }
+
+  &.is-invalid {
+    border-color: var(--color-danger);
+
+    &:focus {
+      border-color: var(--color-danger);
+      box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
+    }
+  }
+
+  &.is-valid {
+    border-color: var(--color-success);
+
+    &:focus {
+      border-color: var(--color-success);
+      box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
+    }
+  }
+}
+
+textarea.form-control {
+  height: auto;
+  min-height: 100px;
+  resize: vertical;
+}
+
+.form-select {
+  display: block;
+  width: 100%;
+  height: calc(var(--spacing-4) * 2.5);
+  padding: var(--spacing-2) var(--spacing-3);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-normal);
+  color: var(--color-gray-800);
+  background-color: var(--color-white);
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right var(--spacing-3) center;
+  background-size: 16px 12px;
+  border: var(--border-width) solid var(--color-gray-400);
+  border-radius: var(--border-radius);
+  appearance: none;
+  transition: var(--transition-default);
+
+  &:focus {
+    border-color: var(--color-primary-light);
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(52, 152, 219, 0.25);
+  }
+
+  &:disabled {
+    background-color: var(--color-gray-200);
+    opacity: 1;
+  }
+
+  &.is-invalid {
+    border-color: var(--color-danger);
+
+    &:focus {
+      border-color: var(--color-danger);
+      box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
+    }
+  }
+
+  &.is-valid {
+    border-color: var(--color-success);
+
+    &:focus {
+      border-color: var(--color-success);
+      box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
+    }
+  }
+}
+
+// チェックボックスとラジオボタン
+.form-check {
+  display: block;
+  min-height: calc(var(--line-height-normal) * var(--font-size-base));
+  padding-left: 1.5em;
+  margin-bottom: var(--spacing-2);
+}
+
+.form-check-input {
+  float: left;
+  margin-left: -1.5em;
+  width: 1em;
+  height: 1em;
+  margin-top: 0.25em;
+  vertical-align: top;
+  border: var(--border-width) solid var(--color-gray-500);
+  background-color: var(--color-white);
+  appearance: none;
+  transition: var(--transition-default);
+
+  &[type="checkbox"] {
+    border-radius: 0.25em;
+
+    &:checked {
+      background-color: var(--color-primary);
+      border-color: var(--color-primary);
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10l3 3l6-6'/%3e%3c/svg%3e");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 0.75em;
+    }
+  }
+
+  &[type="radio"] {
+    border-radius: 50%;
+
+    &:checked {
+      background-color: var(--color-primary);
+      border-color: var(--color-primary);
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='2' fill='%23fff'/%3e%3c/svg%3e");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 0.75em;
+    }
+  }
+
+  &:focus {
+    border-color: var(--color-primary-light);
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(52, 152, 219, 0.25);
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    pointer-events: none;
+    filter: none;
+  }
+}
+
+.form-check-label {
+  display: inline-block;
+  margin-bottom: 0;
+  cursor: pointer;
+}
+
+.form-switch {
+  padding-left: 2.5em;
+
+  .form-check-input {
+    width: 2em;
+    margin-left: -2.5em;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='rgba%280, 0, 0, 0.25%29'/%3e%3c/svg%3e");
+    background-position: left center;
+    border-radius: 2em;
+    transition: background-position 0.15s ease-in-out;
+
+    &:checked {
+      background-position: right center;
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23fff'/%3e%3c/svg%3e");
+    }
+  }
+}
+
+// インラインフォーム
+.form-inline {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+
+  .form-group,
+  .form-check {
+    margin-right: var(--spacing-3);
+  }
+}
+
+// フォームサイズ
+.form-control-lg {
+  height: calc(var(--spacing-4) * 3);
+  padding: var(--spacing-3) var(--spacing-4);
+  font-size: var(--font-size-lg);
+  border-radius: var(--border-radius-md);
+}
+
+.form-control-sm {
+  height: calc(var(--spacing-4) * 2);
+  padding: var(--spacing-1) var(--spacing-2);
+  font-size: var(--font-size-sm);
+  border-radius: var(--border-radius-sm);
+}
+
+// フォームフィードバック
+.invalid-feedback {
+  display: none;
+  width: 100%;
+  margin-top: var(--spacing-1);
+  font-size: var(--font-size-sm);
+  color: var(--color-danger);
+}
+
+.valid-feedback {
+  display: none;
+  width: 100%;
+  margin-top: var(--spacing-1);
+  font-size: var(--font-size-sm);
+  color: var(--color-success);
+}
+
+.is-invalid~.invalid-feedback,
+.is-invalid~.invalid-tooltip {
+  display: block;
+}
+
+.is-valid~.valid-feedback,
+.is-valid~.valid-tooltip {
+  display: block;
+}
+
+// フォームレイアウト
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: calc(var(--spacing-2) * -1);
+  margin-left: calc(var(--spacing-2) * -1);
+
+  >.col,
+  >[class*="col-"] {
+    padding-right: var(--spacing-2);
+    padding-left: var(--spacing-2);
+  }
+}

@@ -1,0 +1,152 @@
+// タブコンポーネント
+.tabs {
+  margin-bottom: var(--spacing-4);
+}
+
+.tab-nav {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+  border-bottom: var(--border-width) solid var(--border-color);
+
+  &.tab-nav-pills {
+    border-bottom: 0;
+
+    .tab-nav-link {
+      border-radius: var(--border-radius-full);
+
+      &.active {
+        color: var(--color-white);
+        background-color: var(--color-primary);
+        border-color: var(--color-primary);
+      }
+    }
+  }
+
+  &.tab-nav-vertical {
+    flex-direction: column;
+    border-bottom: 0;
+    border-right: var(--border-width) solid var(--border-color);
+
+    .tab-nav-link {
+      margin-right: 0;
+      margin-bottom: var(--spacing-2);
+      border-radius: var(--border-radius) 0 0 var(--border-radius);
+
+      &.active {
+        border-color: var(--border-color) var(--color-white) var(--border-color) var(--border-color);
+      }
+    }
+  }
+
+  // レスポンシブ対応
+  @include sp {
+    &.tab-nav-responsive {
+      flex-direction: column;
+      border-bottom: 0;
+      border-right: 0;
+
+      .tab-nav-link {
+        margin-right: 0;
+        margin-bottom: var(--spacing-2);
+        border-radius: var(--border-radius);
+      }
+    }
+  }
+}
+
+.tab-nav-item {
+  margin-bottom: calc(var(--border-width) * -1);
+}
+
+.tab-nav-link {
+  position: relative;
+  display: block;
+  padding: var(--spacing-2) var(--spacing-4);
+  margin-right: var(--spacing-2);
+  border: var(--border-width) solid transparent;
+  border-top-left-radius: var(--border-radius);
+  border-top-right-radius: var(--border-radius);
+  color: var(--color-gray-700);
+  text-decoration: none;
+  background-color: transparent;
+  transition: var(--transition-default);
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    color: var(--color-primary);
+    border-color: var(--color-gray-200) var(--color-gray-200) var(--border-color);
+  }
+
+  &.active {
+    color: var(--color-primary);
+    background-color: var(--color-white);
+    border-color: var(--border-color) var(--border-color) var(--color-white);
+  }
+
+  &.disabled {
+    color: var(--color-gray-500);
+    pointer-events: none;
+    cursor: not-allowed;
+    background-color: transparent;
+    border-color: transparent;
+  }
+}
+
+.tab-content {
+  >.tab-pane {
+    display: none;
+  }
+
+  >.active {
+    display: block;
+  }
+}
+
+.tab-pane {
+  padding: var(--spacing-4) 0;
+}
+
+// フェードアニメーション付きのタブ
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.tab-content-fade {
+  >.active {
+    animation: fade-in 0.2s ease-in-out;
+  }
+}
+
+// タブ切り替えインジケータ
+.tab-nav-indicator {
+  position: relative;
+
+  .indicator {
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    height: 2px;
+    background-color: var(--color-primary);
+    transition: transform 0.3s ease, width 0.3s ease;
+  }
+
+  .tab-nav-link.active::after {
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--color-primary);
+  }
+}

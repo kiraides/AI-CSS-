@@ -1,0 +1,128 @@
+// アラートコンポーネント
+.alert {
+  position: relative;
+  padding: var(--spacing-3) var(--spacing-4);
+  margin-bottom: var(--spacing-4);
+  border: var(--border-width) solid transparent;
+  border-radius: var(--border-radius);
+
+  // 閉じるボタン
+  .close {
+    position: absolute;
+    top: var(--spacing-3);
+    right: var(--spacing-4);
+    font-size: var(--font-size-lg);
+    line-height: 1;
+    color: inherit;
+    opacity: 0.5;
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+
+    &:hover {
+      opacity: 0.75;
+    }
+  }
+
+  // アラートヘッダー
+  .alert-heading {
+    margin-top: 0;
+    margin-bottom: var(--spacing-2);
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-bold);
+    color: inherit;
+  }
+
+  // リンク
+  a {
+    font-weight: var(--font-weight-bold);
+    color: inherit;
+    text-decoration: underline;
+
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+}
+
+// アラートバリエーション
+.alert-primary {
+  color: darken(#3498db, 30%);
+  background-color: lighten(#3498db, 30%);
+  border-color: lighten(#3498db, 20%);
+}
+
+.alert-secondary {
+  color: darken(#2ecc71, 30%);
+  background-color: lighten(#2ecc71, 45%);
+  border-color: lighten(#2ecc71, 35%);
+}
+
+.alert-success {
+  color: darken(#28a745, 30%);
+  background-color: lighten(#28a745, 45%);
+  border-color: lighten(#28a745, 35%);
+}
+
+.alert-info {
+  color: darken(#17a2b8, 30%);
+  background-color: lighten(#17a2b8, 45%);
+  border-color: lighten(#17a2b8, 35%);
+}
+
+.alert-warning {
+  color: darken(#ffc107, 35%);
+  background-color: lighten(#ffc107, 35%);
+  border-color: lighten(#ffc107, 25%);
+}
+
+.alert-danger {
+  color: darken(#dc3545, 20%);
+  background-color: lighten(#dc3545, 35%);
+  border-color: lighten(#dc3545, 25%);
+}
+
+// アラートアイコン
+.alert-icon {
+  display: flex;
+  align-items: flex-start;
+
+  .icon {
+    margin-right: var(--spacing-3);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: currentColor;
+    opacity: 0.2;
+
+    svg {
+      width: 16px;
+      height: 16px;
+      fill: currentColor;
+    }
+  }
+
+  .alert-content {
+    flex: 1;
+  }
+}
+
+// アニメーション付きアラート
+@keyframes alert-in {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.alert-animated {
+  animation: alert-in 0.3s ease-out forwards;
+}

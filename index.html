@@ -4,586 +4,474 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>カジュアルCSSテンプレート</title>
+  <title>CSS フレームワーク デモ</title>
   <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
-  <header class="header">
+  <!-- ヘッダー -->
+  <header class="bg-gray-800 py-3">
     <div class="container">
-      <div class="header-inner">
-        <div class="logo">
-          <h1>CHILL</h1>
+      <div class="row align-items-center">
+        <div class="col-6">
+          <h1 class="text-white text-xl fw-bold m-0">CSS Framework</h1>
         </div>
-        <nav class="nav">
-          <ul class="nav-list">
-            <li class="nav-item"><a href="#" class="nav-link">ホーム</a></li>
-            <li class="nav-item"><a href="#features" class="nav-link">特徴</a></li>
-            <li class="nav-item"><a href="#services" class="nav-link">サービス</a></li>
-            <li class="nav-item"><a href="#grid-demo" class="nav-link">グリッド</a></li>
-            <li class="nav-item"><a href="#components" class="nav-link">コンポーネント</a></li>
-            <li class="nav-item"><a href="#contact" class="nav-link">お問い合わせ</a></li>
-          </ul>
-        </nav>
-        <button class="mobile-menu-toggle" id="mobile-menu-toggle">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
+        <div class="col-6 text-right">
+          <button class="btn btn-outline-primary hide-pc" data-toggle="drawer" data-target="#mainDrawer">
+            <span>メニュー</span>
+          </button>
+          <nav class="hide-sp">
+            <ul class="d-flex m-0 list-unstyled">
+              <li class="ml-4"><a href="#" class="text-white">ホーム</a></li>
+              <li class="ml-4"><a href="#" class="text-white">コンポーネント</a></li>
+              <li class="ml-4"><a href="#" class="text-white">ユーティリティ</a></li>
+              <li class="ml-4"><a href="#" class="text-white">ドキュメント</a></li>
+            </ul>
+          </nav>
+        </div>
       </div>
     </div>
   </header>
 
-  <section class="hero">
+  <!-- メインコンテンツ -->
+  <main class="py-5">
     <div class="container">
-      <div class="hero-content">
-        <h2 class="hero-title" data-text="クリエイティブなデザインで<br>あなたのビジョンを形に">クリエイティブなデザインで<br>あなたのビジョンを形に</h2>
-        <p class="hero-text">モダンでカジュアルなデザインテンプレートで、あなたのプロジェクトを次のレベルへ</p>
-        <div class="hero-buttons">
-          <a href="#features" class="btn btn-primary">詳細を見る</a>
-          <a href="#contact" class="btn btn-outline">お問い合わせ</a>
-        </div>
-      </div>
-    </div>
-  </section>
+      <section class="mb-6">
+        <h2 class="text-3xl mb-4">CSSフレームワーク</h2>
+        <p class="mb-4">シンプルで軽量な汎用CSSフレームワークです。このページでは各コンポーネントとユーティリティクラスのデモを紹介します。</p>
 
-  <section id="features" class="features">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">特徴</h2>
-        <p class="section-subtitle">このテンプレートが提供する機能</p>
-      </div>
-      <div class="row">
-        <div class="col-12 col-sm-6 col-lg-3">
-          <div class="feature-card">
-            <div class="feature-icon">
-              <i class="fas fa-paint-brush"></i>
-            </div>
-            <h3 class="feature-title">モダンデザイン</h3>
-            <p class="feature-text">最新のトレンドに沿ったデザイン要素を取り入れています</p>
-          </div>
+        <div class="alert alert-primary mb-4">
+          <h4 class="alert-heading">お知らせ</h4>
+          <p class="mb-0">このフレームワークはSCSSで構築されており、カスタマイズが簡単です。</p>
         </div>
-        <div class="col-12 col-sm-6 col-lg-3">
-          <div class="feature-card">
-            <div class="feature-icon">
-              <i class="fas fa-mobile-alt"></i>
-            </div>
-            <h3 class="feature-title">レスポンシブ</h3>
-            <p class="feature-text">どのデバイスでも美しく表示されるレイアウト</p>
-          </div>
-        </div>
-        <div class="col-12 col-sm-6 col-lg-3">
-          <div class="feature-card">
-            <div class="feature-icon">
-              <i class="fas fa-bolt"></i>
-            </div>
-            <h3 class="feature-title">高速読み込み</h3>
-            <p class="feature-text">最適化されたコードでページの読み込み速度を向上</p>
-          </div>
-        </div>
-        <div class="col-12 col-sm-6 col-lg-3">
-          <div class="feature-card">
-            <div class="feature-icon">
-              <i class="fas fa-code"></i>
-            </div>
-            <h3 class="feature-title">カスタマイズ可能</h3>
-            <p class="feature-text">簡単にカスタマイズできる構造とスタイル</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+      </section>
 
-  <section id="services" class="services">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">サービス</h2>
-        <p class="section-subtitle">私たちが提供するサービス</p>
-      </div>
-      <div class="row">
-        <div class="col-12 col-md-4">
-          <div class="service-item">
-            <img src="https://source.unsplash.com/random/600x400/?webdesign" alt="ウェブデザイン" class="service-image">
-            <div class="service-content">
-              <h3 class="service-title">ウェブデザイン</h3>
-              <p class="service-text">ユーザーフレンドリーで魅力的なウェブサイトデザインを提供します</p>
-              <a href="#" class="service-link">詳細を見る <i class="fas fa-arrow-right"></i></a>
-            </div>
-          </div>
-        </div>
-        <div class="col-12 col-md-4">
-          <div class="service-item">
-            <img src="https://source.unsplash.com/random/600x400/?branding" alt="ブランディング" class="service-image">
-            <div class="service-content">
-              <h3 class="service-title">ブランディング</h3>
-              <p class="service-text">あなたのブランドを際立たせる戦略とデザインを提案します</p>
-              <a href="#" class="service-link">詳細を見る <i class="fas fa-arrow-right"></i></a>
-            </div>
-          </div>
-        </div>
-        <div class="col-12 col-md-4">
-          <div class="service-item">
-            <img src="https://source.unsplash.com/random/600x400/?development" alt="開発" class="service-image">
-            <div class="service-content">
-              <h3 class="service-title">ウェブ開発</h3>
-              <p class="service-text">最新技術を活用した高品質なウェブ開発サービスを提供します</p>
-              <a href="#" class="service-link">詳細を見る <i class="fas fa-arrow-right"></i></a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+      <!-- グリッドシステム -->
+      <section class="mb-6">
+        <h3 class="text-2xl mb-3">グリッドシステム</h3>
+        <p class="mb-4">12カラムのレスポンシブグリッドシステムを提供します。</p>
 
-  <section id="grid-demo" class="grid-demo">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">グリッドシステム</h2>
-        <p class="section-subtitle">さまざまなレイアウトを簡単に作成できるグリッドシステム</p>
-      </div>
-
-      <div class="grid-example">
-        <h3 class="grid-example-title">等幅2カラム</h3>
-        <div class="row">
-          <div class="col-md-6">
-            <div class="grid-demo-item">
-              <h4>.col-md-6</h4>
-              <p>中サイズ画面以上で6カラム (50%)</p>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="grid-demo-item">
-              <h4>.col-md-6</h4>
-              <p>中サイズ画面以上で6カラム (50%)</p>
-            </div>
+        <div class="row mb-3">
+          <div class="col-12">
+            <div class="bg-gray-200 p-2 text-center">.col-12</div>
           </div>
         </div>
-      </div>
 
-      <div class="grid-example">
-        <h3 class="grid-example-title">幅が異なる2カラムレイアウト</h3>
-        <div class="row">
-          <div class="col-md-8">
-            <div class="grid-demo-item">
-              <h4>.col-md-8</h4>
-              <p>中サイズ画面以上で8カラム (66.7%)</p>
-            </div>
+        <div class="row mb-3">
+          <div class="col-6">
+            <div class="bg-gray-200 p-2 text-center">.col-6</div>
           </div>
-          <div class="col-md-4">
-            <div class="grid-demo-item">
-              <h4>.col-md-4</h4>
-              <p>中サイズ画面以上で4カラム (33.3%)</p>
-            </div>
+          <div class="col-6">
+            <div class="bg-gray-200 p-2 text-center">.col-6</div>
           </div>
         </div>
-      </div>
 
-      <div class="grid-example">
-        <h3 class="grid-example-title">3カラムレイアウト</h3>
-        <div class="row">
-          <div class="col-md-4">
-            <div class="grid-demo-item">
-              <h4>.col-md-4</h4>
-              <p>中サイズ画面以上で4カラム (33.3%)</p>
-            </div>
+        <div class="row mb-3">
+          <div class="col-4">
+            <div class="bg-gray-200 p-2 text-center">.col-4</div>
           </div>
-          <div class="col-md-4">
-            <div class="grid-demo-item">
-              <h4>.col-md-4</h4>
-              <p>中サイズ画面以上で4カラム (33.3%)</p>
-            </div>
+          <div class="col-4">
+            <div class="bg-gray-200 p-2 text-center">.col-4</div>
           </div>
-          <div class="col-md-4">
-            <div class="grid-demo-item">
-              <h4>.col-md-4</h4>
-              <p>中サイズ画面以上で4カラム (33.3%)</p>
-            </div>
+          <div class="col-4">
+            <div class="bg-gray-200 p-2 text-center">.col-4</div>
           </div>
         </div>
-      </div>
 
-      <div class="grid-example">
-        <h3 class="grid-example-title">4カラムレイアウト</h3>
-        <div class="row">
-          <div class="col-6 col-md-3">
-            <div class="grid-demo-item">
-              <h4>.col-6 .col-md-3</h4>
-              <p>小画面で6カラム (50%)、中サイズ画面以上で3カラム (25%)</p>
-            </div>
+        <div class="row mb-3">
+          <div class="col-3">
+            <div class="bg-gray-200 p-2 text-center">.col-3</div>
           </div>
-          <div class="col-6 col-md-3">
-            <div class="grid-demo-item">
-              <h4>.col-6 .col-md-3</h4>
-              <p>小画面で6カラム (50%)、中サイズ画面以上で3カラム (25%)</p>
-            </div>
+          <div class="col-3">
+            <div class="bg-gray-200 p-2 text-center">.col-3</div>
           </div>
-          <div class="col-6 col-md-3">
-            <div class="grid-demo-item">
-              <h4>.col-6 .col-md-3</h4>
-              <p>小画面で6カラム (50%)、中サイズ画面以上で3カラム (25%)</p>
-            </div>
+          <div class="col-3">
+            <div class="bg-gray-200 p-2 text-center">.col-3</div>
           </div>
-          <div class="col-6 col-md-3">
-            <div class="grid-demo-item">
-              <h4>.col-6 .col-md-3</h4>
-              <p>小画面で6カラム (50%)、中サイズ画面以上で3カラム (25%)</p>
-            </div>
+          <div class="col-3">
+            <div class="bg-gray-200 p-2 text-center">.col-3</div>
           </div>
         </div>
-      </div>
 
-      <div class="grid-example">
-        <h3 class="grid-example-title">オフセット（余白）</h3>
-        <div class="row">
-          <div class="col-md-6 offset-md-3">
-            <div class="grid-demo-item">
-              <h4>.col-md-6 .offset-md-3</h4>
-              <p>中サイズ画面以上で6カラム (50%)、左側に3カラム分のオフセット</p>
-            </div>
+        <div class="row mb-3">
+          <div class="col-pc-6 col-sp-12">
+            <div class="bg-gray-200 p-2 text-center">.col-pc-6 .col-sp-12</div>
+          </div>
+          <div class="col-pc-6 col-sp-12">
+            <div class="bg-gray-200 p-2 text-center">.col-pc-6 .col-sp-12</div>
           </div>
         </div>
-      </div>
-
-      <div class="grid-example">
-        <h3 class="grid-example-title">入れ子のカラム</h3>
-        <div class="row">
-          <div class="col-md-8">
-            <div class="grid-demo-item">
-              <h4>.col-md-8</h4>
-              <p>中サイズ画面以上で8カラム (66.7%)</p>
-              <div class="row">
-                <div class="col-md-4">
-                  <div class="grid-demo-item">
-                    <h4>入れ子の .col-md-4</h4>
-                    <p>親要素の中で4カラム (33.3%)</p>
-                  </div>
-                </div>
-                <div class="col-md-4">
-                  <div class="grid-demo-item">
-                    <h4>入れ子の .col-md-4</h4>
-                    <p>親要素の中で4カラム (33.3%)</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="grid-demo-item">
-              <h4>.col-md-4</h4>
-              <p>中サイズ画面以上で4カラム (33.3%)</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="components" class="components-demo">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">UI コンポーネント</h2>
-        <p class="section-subtitle">使いやすいUIコンポーネント集</p>
-      </div>
+      </section>
 
       <!-- ボタン -->
-      <div class="component-example">
-        <h3 class="component-title">ボタン</h3>
-        <div class="row">
-          <div class="col-md-6">
-            <h4 class="component-subtitle">ベーシックなボタン</h4>
-            <div class="component-demo">
-              <button class="btn btn-primary">プライマリ</button>
-              <button class="btn btn-secondary">セカンダリ</button>
-              <button class="btn btn-success">サクセス</button>
-              <button class="btn btn-danger">デンジャー</button>
-              <button class="btn btn-outline">アウトライン</button>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <h4 class="component-subtitle">サイズバリエーション</h4>
-            <div class="component-demo">
-              <button class="btn btn-primary btn-sm">スモール</button>
-              <button class="btn btn-primary">ノーマル</button>
-              <button class="btn btn-primary btn-lg">ラージ</button>
-            </div>
-          </div>
-        </div>
-        <div class="row mt-4">
-          <div class="col-md-6">
-            <h4 class="component-subtitle">ボタングループ</h4>
-            <div class="component-demo">
-              <div class="btn-group">
-                <button class="btn btn-primary">左</button>
-                <button class="btn btn-primary">中央</button>
-                <button class="btn btn-primary">右</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <section class="mb-6">
+        <h3 class="text-2xl mb-3">ボタン</h3>
+        <p class="mb-4">様々なスタイルとサイズのボタンが利用できます。</p>
 
-      <!-- フォーム -->
-      <div class="component-example">
-        <h3 class="component-title">フォーム</h3>
-        <div class="row">
-          <div class="col-md-6">
-            <form>
-              <div class="form-group">
-                <label for="name" class="form-label">お名前</label>
-                <input type="text" id="name" class="form-control" placeholder="山田 太郎">
-              </div>
-              <div class="form-group">
-                <label for="email" class="form-label">メールアドレス</label>
-                <input type="email" id="email" class="form-control" placeholder="example@mail.com">
-              </div>
-              <div class="form-group">
-                <label for="message" class="form-label">メッセージ</label>
-                <textarea id="message" class="form-control" placeholder="メッセージを入力してください"></textarea>
-              </div>
-              <div class="form-group">
-                <div class="form-check">
-                  <input type="checkbox" id="agree" class="form-check-input">
-                  <label for="agree" class="form-check-label">利用規約に同意します</label>
-                </div>
-              </div>
-              <button type="submit" class="btn btn-primary">送信する</button>
-            </form>
-          </div>
+        <div class="mb-3">
+          <button class="btn btn-primary mr-2 mb-2">Primary</button>
+          <button class="btn btn-secondary mr-2 mb-2">Secondary</button>
+          <button class="btn btn-accent mr-2 mb-2">Accent</button>
+          <button class="btn btn-success mr-2 mb-2">Success</button>
+          <button class="btn btn-danger mr-2 mb-2">Danger</button>
+          <button class="btn btn-warning mr-2 mb-2">Warning</button>
+          <button class="btn btn-info mr-2 mb-2">Info</button>
         </div>
-      </div>
+
+        <div class="mb-3">
+          <button class="btn btn-outline-primary mr-2 mb-2">Outline Primary</button>
+          <button class="btn btn-outline-secondary mr-2 mb-2">Outline Secondary</button>
+        </div>
+
+        <div class="mb-3">
+          <button class="btn btn-primary btn-sm mr-2 mb-2">Small Button</button>
+          <button class="btn btn-primary mr-2 mb-2">Default Button</button>
+          <button class="btn btn-primary btn-lg mr-2 mb-2">Large Button</button>
+        </div>
+
+        <div class="mb-3">
+          <button class="btn btn-primary btn-block mb-2">Block Button</button>
+        </div>
+      </section>
 
       <!-- カード -->
-      <div class="component-example">
-        <h3 class="component-title">カード</h3>
+      <section class="mb-6">
+        <h3 class="text-2xl mb-3">カード</h3>
+        <p class="mb-4">コンテンツを整理するためのカードコンポーネントです。</p>
+
         <div class="row">
-          <div class="col-md-4">
+          <div class="col-pc-4 col-sp-12 mb-3">
+            <div class="card">
+              <img src="https://via.placeholder.com/400x200" alt="カードイメージ" class="card-img-top">
+              <div class="card-body">
+                <h5 class="card-title">カードタイトル</h5>
+                <p class="card-text">カードのコンテンツテキストです。必要に応じて追加のコンテンツを配置できます。</p>
+                <a href="#" class="btn btn-primary">詳細を見る</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-pc-4 col-sp-12 mb-3">
             <div class="card">
               <div class="card-header">
-                <h4 class="card-title mb-0">カードタイトル</h4>
+                <h5 class="card-title mb-0">カードヘッダー付き</h5>
               </div>
               <div class="card-body">
-                <p class="card-text">これはカードの本文です。さまざまな情報を表示するために使用できます。</p>
-                <button class="btn btn-primary">詳細を見る</button>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="card">
-              <img src="https://source.unsplash.com/random/600x400/?nature" alt="自然" class="service-image">
-              <div class="card-body">
-                <h4 class="card-title">画像付きカード</h4>
-                <p class="card-text">カードの上部に画像を配置できます。</p>
-                <button class="btn btn-primary">詳細を見る</button>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="card">
-              <div class="card-body">
-                <h4 class="card-title">シンプルカード</h4>
-                <p class="card-text">ヘッダーやフッターがないシンプルなカードデザインです。</p>
-                <button class="btn btn-primary">詳細を見る</button>
+                <p class="card-text">カードのコンテンツテキストです。必要に応じて追加のコンテンツを配置できます。</p>
+                <a href="#" class="btn btn-primary">詳細を見る</a>
               </div>
               <div class="card-footer">
-                <small>最終更新: 2023年12月1日</small>
+                <small class="text-gray-600">最終更新: 2023/06/15</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-pc-4 col-sp-12 mb-3">
+            <div class="card card-primary">
+              <div class="card-header">
+                <h5 class="card-title mb-0">プライマリカード</h5>
+              </div>
+              <div class="card-body">
+                <p class="card-text">カードのコンテンツテキストです。必要に応じて追加のコンテンツを配置できます。</p>
+                <a href="#" class="btn btn-primary">詳細を見る</a>
               </div>
             </div>
           </div>
         </div>
-      </div>
-
-      <!-- リスト -->
-      <div class="component-example">
-        <h3 class="component-title">リスト</h3>
-        <div class="row">
-          <div class="col-md-6">
-            <h4 class="component-subtitle">基本リスト</h4>
-            <ul class="list">
-              <li class="list-item">リストアイテム 1</li>
-              <li class="list-item">リストアイテム 2</li>
-              <li class="list-item">リストアイテム 3</li>
-              <li class="list-item">リストアイテム 4</li>
-            </ul>
-          </div>
-          <div class="col-md-6">
-            <h4 class="component-subtitle">リストグループ</h4>
-            <div class="list-group">
-              <a href="#" class="list-group-item active">アクティブなアイテム</a>
-              <a href="#" class="list-group-item">リストグループアイテム 2</a>
-              <a href="#" class="list-group-item">リストグループアイテム 3</a>
-              <a href="#" class="list-group-item">リストグループアイテム 4</a>
-            </div>
-          </div>
-        </div>
-      </div>
+      </section>
 
       <!-- アラート -->
-      <div class="component-example">
-        <h3 class="component-title">アラート</h3>
-        <div class="row">
-          <div class="col-md-6">
-            <div class="alert alert-primary">これはプライマリアラートです。重要なメッセージを表示します。</div>
-            <div class="alert alert-secondary">これはセカンダリアラートです。補足情報を表示します。</div>
-            <div class="alert alert-success">これはサクセスアラートです。成功メッセージを表示します。</div>
-          </div>
-          <div class="col-md-6">
-            <div class="alert alert-danger">これはデンジャーアラートです。エラーメッセージを表示します。</div>
-            <div class="alert alert-warning">これはワーニングアラートです。警告メッセージを表示します。</div>
-            <div class="alert alert-info">これはインフォアラートです。情報メッセージを表示します。</div>
-          </div>
-        </div>
-      </div>
+      <section class="mb-6">
+        <h3 class="text-2xl mb-3">アラート</h3>
+        <p class="mb-4">重要な情報を表示するためのアラートコンポーネントです。</p>
 
-      <!-- バッジ -->
-      <div class="component-example">
-        <h3 class="component-title">バッジ</h3>
-        <div class="row">
-          <div class="col-md-6">
-            <div class="component-demo">
-              <span class="badge badge-primary">プライマリ</span>
-              <span class="badge badge-secondary">セカンダリ</span>
-              <span class="badge badge-success">サクセス</span>
-              <span class="badge badge-danger">デンジャー</span>
-              <span class="badge badge-warning">ワーニング</span>
-              <span class="badge badge-info">インフォ</span>
-            </div>
-          </div>
+        <div class="alert alert-primary mb-3">
+          <strong>プライマリアラート</strong> - 一般的な情報を表示します。
         </div>
-      </div>
 
-      <!-- プログレスバー -->
-      <div class="component-example">
-        <h3 class="component-title">プログレスバー</h3>
-        <div class="row">
-          <div class="col-md-6">
-            <div class="progress">
-              <div class="progress-bar" style="width: 25%"></div>
+        <div class="alert alert-success mb-3">
+          <strong>成功アラート</strong> - 操作が成功したことを示します。
+        </div>
+
+        <div class="alert alert-warning mb-3">
+          <strong>警告アラート</strong> - 注意が必要な状態を示します。
+        </div>
+
+        <div class="alert alert-danger mb-3">
+          <strong>危険アラート</strong> - 重大な問題や危険な状態を示します。
+        </div>
+
+        <div class="alert alert-info mb-3">
+          <strong>情報アラート</strong> - 中立的な情報を提供します。
+        </div>
+
+        <div class="alert alert-primary alert-icon mb-3">
+          <div class="icon">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z">
+              </path>
+            </svg>
+          </div>
+          <div class="alert-content">
+            <strong>アイコン付きアラート</strong> - アイコンでメッセージを強調します。
+          </div>
+        </div>
+      </section>
+
+      <!-- タブ -->
+      <section class="mb-6">
+        <h3 class="text-2xl mb-3">タブ</h3>
+        <p class="mb-4">コンテンツを切り替えるためのタブUIコンポーネントです。</p>
+
+        <div class="tabs">
+          <ul class="tab-nav mb-3">
+            <li class="tab-nav-item">
+              <a class="tab-nav-link active" data-toggle="tab" href="#tab1">タブ1</a>
+            </li>
+            <li class="tab-nav-item">
+              <a class="tab-nav-link" data-toggle="tab" href="#tab2">タブ2</a>
+            </li>
+            <li class="tab-nav-item">
+              <a class="tab-nav-link" data-toggle="tab" href="#tab3">タブ3</a>
+            </li>
+          </ul>
+
+          <div class="tab-content tab-content-fade">
+            <div class="tab-pane active" id="tab1">
+              <h4 class="mb-3">タブ1のコンテンツ</h4>
+              <p>これはタブ1のサンプルコンテンツです。タブをクリックすると、このコンテンツエリアが切り替わります。</p>
             </div>
-            <div class="progress">
-              <div class="progress-bar" style="width: 50%"></div>
+            <div class="tab-pane" id="tab2">
+              <h4 class="mb-3">タブ2のコンテンツ</h4>
+              <p>これはタブ2のサンプルコンテンツです。各タブには異なるコンテンツを配置できます。</p>
             </div>
-            <div class="progress">
-              <div class="progress-bar" style="width: 75%"></div>
-            </div>
-            <div class="progress">
-              <div class="progress-bar" style="width: 100%"></div>
+            <div class="tab-pane" id="tab3">
+              <h4 class="mb-3">タブ3のコンテンツ</h4>
+              <p>これはタブ3のサンプルコンテンツです。タブは必要な数だけ追加できます。</p>
             </div>
           </div>
         </div>
-      </div>
+      </section>
+
+      <!-- スピナー -->
+      <section class="mb-6">
+        <h3 class="text-2xl mb-3">スピナー</h3>
+        <p class="mb-4">読み込み中や処理中を示すためのスピナーコンポーネントです。</p>
+
+        <div class="mb-4">
+          <div class="spinner spinner-primary mr-3"></div>
+          <div class="spinner spinner-secondary mr-3"></div>
+          <div class="spinner spinner-accent mr-3"></div>
+          <div class="spinner spinner-success mr-3"></div>
+          <div class="spinner spinner-danger mr-3"></div>
+        </div>
+
+        <div class="mb-4">
+          <div class="spinner-grow spinner-primary mr-3"></div>
+          <div class="spinner-grow spinner-secondary mr-3"></div>
+          <div class="spinner-grow spinner-accent mr-3"></div>
+        </div>
+
+        <div class="mb-4">
+          <div class="spinner-dots spinner-primary mr-3">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+          </div>
+          <div class="spinner-dots spinner-secondary mr-3">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+          </div>
+        </div>
+
+        <div class="mb-4">
+          <div class="spinner-text">
+            <div class="spinner spinner-primary"></div>
+            <span>読み込み中...</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- フォーム -->
+      <section class="mb-6">
+        <h3 class="text-2xl mb-3">フォーム</h3>
+        <p class="mb-4">フォーム要素とコントロールのスタイリングです。</p>
+
+        <form>
+          <div class="form-group">
+            <label for="name" class="form-label">お名前</label>
+            <input type="text" class="form-control" id="name" placeholder="山田 太郎">
+            <small class="form-text">氏名を入力してください。</small>
+          </div>
+
+          <div class="form-group">
+            <label for="email" class="form-label">メールアドレス</label>
+            <input type="email" class="form-control" id="email" placeholder="example@example.com">
+          </div>
+
+          <div class="form-row">
+            <div class="col-pc-6 col-sp-12 form-group">
+              <label for="password" class="form-label">パスワード</label>
+              <input type="password" class="form-control" id="password">
+            </div>
+            <div class="col-pc-6 col-sp-12 form-group">
+              <label for="confirm-password" class="form-label">パスワード（確認）</label>
+              <input type="password" class="form-control" id="confirm-password">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="message" class="form-label">メッセージ</label>
+            <textarea class="form-control" id="message" rows="3" placeholder="メッセージを入力"></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="country" class="form-label">国</label>
+            <select class="form-select" id="country">
+              <option selected>選択してください</option>
+              <option value="japan">日本</option>
+              <option value="usa">アメリカ</option>
+              <option value="other">その他</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="agree">
+              <label class="form-check-label" for="agree">利用規約に同意する</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="contact" id="contact1" checked>
+              <label class="form-check-label" for="contact1">メールで連絡</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="contact" id="contact2">
+              <label class="form-check-label" for="contact2">電話で連絡</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="form-switch">
+              <input class="form-check-input" type="checkbox" id="newsletter">
+              <label class="form-check-label" for="newsletter">ニュースレターを受け取る</label>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary">送信</button>
+        </form>
+      </section>
+
+      <!-- モーダル -->
+      <section class="mb-6">
+        <h3 class="text-2xl mb-3">モーダル</h3>
+        <p class="mb-4">ポップアップダイアログを表示するモーダルコンポーネントです。</p>
+
+        <button type="button" class="btn btn-primary mr-2" data-toggle="modal" data-target="#exampleModal">
+          モーダルを開く
+        </button>
+
+        <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#largeModal">
+          大きいモーダルを開く
+        </button>
+
+        <!-- モーダル1 -->
+        <div class="modal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">モーダルタイトル</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <p>これはモーダルボディのコンテンツです。必要な情報やフォームを配置できます。</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button>
+                <button type="button" class="btn btn-primary">保存</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- モーダル2 -->
+        <div class="modal" id="largeModal" tabindex="-1" aria-labelledby="largeModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="largeModalLabel">大きいモーダル</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <p>これは大きいサイズのモーダルです。より多くのコンテンツを表示できます。</p>
+                <p>モーダルのサイズは用途に合わせて変更できます。</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button>
+                <button type="button" class="btn btn-primary">保存</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
-  </section>
+  </main>
 
-  <section class="testimonials">
+  <!-- フッター -->
+  <footer class="bg-gray-800 py-4 text-center text-white">
     <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">お客様の声</h2>
-        <p class="section-subtitle">私たちのサービスをご利用いただいたお客様からのフィードバック</p>
-      </div>
-      <div class="row">
-        <div class="col-md-6">
-          <div class="testimonial-item">
-            <div class="testimonial-content">
-              <p class="testimonial-text">「このテンプレートを使用して私たちのウェブサイトを刷新しました。結果は素晴らしく、訪問者からの反応も非常に良いです。」</p>
-            </div>
-            <div class="testimonial-author">
-              <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="鈴木 愛" class="testimonial-avatar">
-              <div class="testimonial-info">
-                <h4 class="testimonial-name">鈴木 愛</h4>
-                <p class="testimonial-position">マーケティング部長</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="testimonial-item">
-            <div class="testimonial-content">
-              <p class="testimonial-text">「デザインのクオリティが高く、簡単にカスタマイズできる点が気に入っています。スタッフの対応も迅速で、とても満足しています。」</p>
-            </div>
-            <div class="testimonial-author">
-              <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="田中 誠" class="testimonial-avatar">
-              <div class="testimonial-info">
-                <h4 class="testimonial-name">田中 誠</h4>
-                <p class="testimonial-position">起業家</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact" class="cta">
-    <div class="container">
-      <div class="cta-content">
-        <h2 class="cta-title">あなたのプロジェクトを始めましょう</h2>
-        <p class="cta-text">私たちと一緒に、あなたのビジョンを現実にしましょう</p>
-        <a href="#" class="btn btn-primary">お問い合わせ</a>
-      </div>
-    </div>
-  </section>
-
-  <footer class="footer">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-4">
-          <div class="footer-info">
-            <h3 class="footer-logo">CHILL</h3>
-            <p class="footer-description">モダンでカジュアルなデザインテンプレートで、あなたのプロジェクトを次のレベルへ</p>
-            <div class="social-links">
-              <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-              <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
-              <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-              <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-8">
-          <div class="row">
-            <div class="col-md-4">
-              <div class="footer-links-column">
-                <h4 class="footer-links-title">会社情報</h4>
-                <ul class="footer-menu">
-                  <li><a href="#">私たちについて</a></li>
-                  <li><a href="#services">サービス</a></li>
-                  <li><a href="#grid-demo">グリッド</a></li>
-                  <li><a href="#">ブログ</a></li>
-                </ul>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="footer-links-column">
-                <h4 class="footer-links-title">サポート</h4>
-                <ul class="footer-menu">
-                  <li><a href="#">FAQ</a></li>
-                  <li><a href="#contact">お問い合わせ</a></li>
-                  <li><a href="#">プライバシーポリシー</a></li>
-                  <li><a href="#">利用規約</a></li>
-                </ul>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="footer-links-column">
-                <h4 class="footer-links-title">お問い合わせ</h4>
-                <ul class="footer-contact">
-                  <li><i class="fas fa-map-marker-alt"></i> 東京都渋谷区〇〇 1-2-3</li>
-                  <li><i class="fas fa-phone"></i> 03-1234-5678</li>
-                  <li><i class="fas fa-envelope"></i> info@example.com</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p class="copyright">© 2023 CHILL. All Rights Reserved.</p>
-      </div>
+      <p class="mb-0">© 2023 CSS Framework. All rights reserved.</p>
     </div>
   </footer>
 
-  <script src="js/main.js"></script>
+  <!-- ドロワーメニュー -->
+  <div class="drawer drawer-left" id="mainDrawer" aria-hidden="true">
+    <div class="drawer-content">
+      <div class="drawer-header">
+        <h5 class="drawer-title">メニュー</h5>
+        <button type="button" class="close" data-dismiss="drawer" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="drawer-body">
+        <ul class="drawer-nav">
+          <li class="nav-item">
+            <a href="#" class="nav-link">ホーム</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link dropdown-toggle" aria-expanded="false">コンポーネント</a>
+            <ul class="nav-submenu">
+              <li class="nav-item"><a href="#" class="nav-link">ボタン</a></li>
+              <li class="nav-item"><a href="#" class="nav-link">カード</a></li>
+              <li class="nav-item"><a href="#" class="nav-link">アラート</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link dropdown-toggle" aria-expanded="false">ユーティリティ</a>
+            <ul class="nav-submenu">
+              <li class="nav-item"><a href="#" class="nav-link">グリッド</a></li>
+              <li class="nav-item"><a href="#" class="nav-link">スペーシング</a></li>
+              <li class="nav-item"><a href="#" class="nav-link">テキスト</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">ドキュメント</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script src="js/framework.js"></script>
 </body>
 
 </html>

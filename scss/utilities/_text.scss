@@ -1,0 +1,184 @@
+// テキストユーティリティクラス
+
+// テキストアライメント
+.text-left {
+  text-align: left !important;
+}
+
+.text-center {
+  text-align: center !important;
+}
+
+.text-right {
+  text-align: right !important;
+}
+
+.text-justify {
+  text-align: justify !important;
+}
+
+// テキスト変換
+.text-lowercase {
+  text-transform: lowercase !important;
+}
+
+.text-uppercase {
+  text-transform: uppercase !important;
+}
+
+.text-capitalize {
+  text-transform: capitalize !important;
+}
+
+// フォントウェイト
+.fw-light {
+  font-weight: var(--font-weight-light) !important;
+}
+
+.fw-normal {
+  font-weight: var(--font-weight-normal) !important;
+}
+
+.fw-medium {
+  font-weight: var(--font-weight-medium) !important;
+}
+
+.fw-bold {
+  font-weight: var(--font-weight-bold) !important;
+}
+
+// フォントスタイル
+.font-italic {
+  font-style: italic !important;
+}
+
+.font-normal {
+  font-style: normal !important;
+}
+
+// テキストの装飾
+.text-decoration-none {
+  text-decoration: none !important;
+}
+
+.text-decoration-underline {
+  text-decoration: underline !important;
+}
+
+.text-decoration-line-through {
+  text-decoration: line-through !important;
+}
+
+// フォントサイズ
+.text-xs {
+  font-size: var(--font-size-xs) !important;
+}
+
+.text-sm {
+  font-size: var(--font-size-sm) !important;
+}
+
+.text-md {
+  font-size: var(--font-size-md) !important;
+}
+
+.text-lg {
+  font-size: var(--font-size-lg) !important;
+}
+
+.text-xl {
+  font-size: var(--font-size-xl) !important;
+}
+
+.text-2xl {
+  font-size: var(--font-size-2xl) !important;
+}
+
+.text-3xl {
+  font-size: var(--font-size-3xl) !important;
+}
+
+.text-4xl {
+  font-size: var(--font-size-4xl) !important;
+}
+
+.text-5xl {
+  font-size: var(--font-size-5xl) !important;
+}
+
+// 行の高さ
+.lh-tight {
+  line-height: var(--line-height-tight) !important;
+}
+
+.lh-normal {
+  line-height: var(--line-height-normal) !important;
+}
+
+.lh-relaxed {
+  line-height: var(--line-height-relaxed) !important;
+}
+
+// テキストの切り詰め
+.text-truncate {
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+}
+
+// テキストの折り返し
+.text-wrap {
+  white-space: normal !important;
+}
+
+.text-nowrap {
+  white-space: nowrap !important;
+}
+
+.text-break {
+  word-break: break-word !important;
+  overflow-wrap: break-word !important;
+}
+
+// テキストケース
+.text-case-normal {
+  text-transform: none !important;
+}
+
+// レターのスペーシング
+.tracking-tight {
+  letter-spacing: var(--letter-spacing-tight) !important;
+}
+
+.tracking-normal {
+  letter-spacing: var(--letter-spacing-normal) !important;
+}
+
+.tracking-wide {
+  letter-spacing: var(--letter-spacing-wide) !important;
+}
+
+// 垂直アライメント
+.align-baseline {
+  vertical-align: baseline !important;
+}
+
+.align-top {
+  vertical-align: top !important;
+}
+
+.align-middle {
+  vertical-align: middle !important;
+}
+
+.align-bottom {
+  vertical-align: bottom !important;
+}
+
+.align-text-top {
+  vertical-align: text-top !important;
+}
+
+.align-text-bottom {
+  vertical-align: text-bottom !important;
+}
