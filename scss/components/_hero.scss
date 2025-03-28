@@ -1,0 +1,283 @@
+// ヒーローコンポーネント
+.hero {
+  position: relative;
+  width: 100%;
+  padding: var(--spacing-8) 0;
+  background-color: var(--color-gray-100);
+  overflow: hidden;
+
+  // フルサイズヒーロー
+  &.hero-full {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+  }
+
+  // ラージサイズヒーロー
+  &.hero-lg {
+    padding: var(--spacing-9) 0;
+  }
+
+  // 背景画像付きヒーロー
+  &.hero-bg-image {
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: var(--color-white);
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 1;
+    }
+
+    .container {
+      position: relative;
+      z-index: 2;
+    }
+  }
+
+  // グラデーション背景
+  &.hero-gradient {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+    color: var(--color-white);
+  }
+
+  // ダークヒーロー
+  &.hero-dark {
+    background-color: var(--color-gray-900);
+    color: var(--color-white);
+  }
+
+  // プライマリカラーヒーロー
+  &.hero-primary {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+  }
+
+  // アニメーション付きヒーロー
+  &.hero-animate {
+
+    .hero-title,
+    .hero-text,
+    .hero-buttons {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.8s forwards;
+    }
+
+    .hero-text {
+      animation-delay: 0.2s;
+    }
+
+    .hero-buttons {
+      animation-delay: 0.4s;
+    }
+  }
+}
+
+.hero-content {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+
+  // 左寄せ
+  &.text-left {
+    margin-left: 0;
+    text-align: left;
+  }
+
+  // 右寄せ
+  &.text-right {
+    margin-right: 0;
+    text-align: right;
+  }
+}
+
+.hero-title {
+  font-size: var(--font-size-5xl);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--spacing-4);
+  line-height: 1.2;
+
+  // レスポンシブ対応
+  @include sp {
+    font-size: var(--font-size-4xl);
+  }
+
+  // 小さいタイトル
+  &.hero-title-sm {
+    font-size: var(--font-size-4xl);
+
+    @include sp {
+      font-size: var(--font-size-3xl);
+    }
+  }
+
+  // 大きいタイトル
+  &.hero-title-lg {
+    font-size: calc(var(--font-size-5xl) * 1.2);
+
+    @include sp {
+      font-size: var(--font-size-5xl);
+    }
+  }
+}
+
+.hero-text {
+  font-size: var(--font-size-lg);
+  margin-bottom: var(--spacing-6);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+
+  @include sp {
+    font-size: var(--font-size-base);
+  }
+
+  // 左寄せ
+  .text-left & {
+    margin-left: 0;
+  }
+
+  // 右寄せ
+  .text-right & {
+    margin-right: 0;
+  }
+}
+
+.hero-buttons {
+  margin-top: var(--spacing-4);
+
+  .btn+.btn {
+    margin-left: var(--spacing-3);
+
+    @include sp {
+      margin-left: 0;
+      margin-top: var(--spacing-3);
+    }
+  }
+
+  @include sp {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .text-left & {
+      align-items: flex-start;
+    }
+
+    .text-right & {
+      align-items: flex-end;
+    }
+  }
+}
+
+.hero-image {
+  margin-top: var(--spacing-6);
+  max-width: 100%;
+
+  img {
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--border-radius-md);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  }
+}
+
+// スプリットレイアウト
+.hero-split {
+  display: flex;
+  align-items: center;
+  padding: 0;
+
+  @include sp {
+    flex-direction: column;
+  }
+
+  .hero-content {
+    width: 50%;
+    padding: var(--spacing-8);
+    text-align: left;
+    margin: 0;
+
+    @include sp {
+      width: 100%;
+      padding: var(--spacing-6);
+    }
+  }
+
+  .hero-media {
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+
+    @include sp {
+      width: 100%;
+      height: 300px;
+    }
+
+    img,
+    video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+// アニメーション
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// オーバーレイバリエーション
+.hero-overlay-light::before {
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.hero-overlay-dark::before {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.hero-overlay-primary::before {
+  background-color: rgba(52, 152, 219, 0.7);
+}
+
+// 波形デザイン
+.hero-wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+
+  svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 70px;
+
+    @include sp {
+      height: 40px;
+    }
+  }
+
+  .shape-fill {
+    fill: var(--color-white);
+  }
+}
